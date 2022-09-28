@@ -15,7 +15,7 @@ const Main = () => {
             <Header></Header>
             <div className='row g-5'>
                 {
-                    subjects.map(subject => <Subject subject={subject}></Subject>)
+                    subjects.map(subject => <Subject key={subject.id} subject={subject}></Subject>)
                 }
             </div>
         </div>
