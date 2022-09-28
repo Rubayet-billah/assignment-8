@@ -9,7 +9,7 @@ const Subject = (props) => {
                 <img className='img-fluid' src={img} alt="" />
                 <h3>Category:{category}</h3>
                 <h3>Credit:{credit}</h3>
-                <h3>Time:{time}</h3>
+                <h3>Time:{time} h</h3>
             </div>
         </div>
     );
