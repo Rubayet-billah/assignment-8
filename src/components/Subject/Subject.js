@@ -5,11 +5,11 @@ const Subject = (props) => {
     return (
         <div className='col-md-6 col-lg-4'>
             <div>
-                <h3>name:{name}</h3>
+                <h3>Name: {name}</h3>
                 <img className='img-fluid' src={img} alt="" />
-                <h3>Category:{category}</h3>
-                <h3>Credit:{credit}</h3>
-                <h3>Time:{time} h</h3>
+                <h3>Category: {category}</h3>
+                <h3>Credit: {credit}</h3>
+                <h3>Time: {time} h</h3>
             </div>
         </div>
     );
