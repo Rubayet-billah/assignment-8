@@ -18,7 +18,7 @@ const Calculation = (props) => {
         <div className='calculation pb-5 mt-5 ms-4 rounded-3 sticky-md-top'>
             <Personal></Personal>
             <div className='px-3'>
-                <h3>Add A Break</h3>
+                <h4>Add A Break</h4>
                 <div className='bg-white d-flex p-3 rounded-3'>
                     <button onClick={(e) => handleBreakTime(e)} className='break-times calculation p-2 mx-2 border border-0 rounded-3'>12h</button>
                     <button onClick={(e) => handleBreakTime(e)} className='break-times calculation p-2 mx-2 border border-0 rounded-3'>24h</button>
@@ -26,10 +26,11 @@ const Calculation = (props) => {
                     <button onClick={(e) => handleBreakTime(e)} className='break-times calculation p-2 mx-2 border border-0 rounded-3'>72h</button>
 
                 </div>
+                <hr />
             </div>
-            <div className='px-3 my-4'>
+            <div className='px-3 mt-3'>
                 <h4>Course Details</h4>
-                <div className='bg-white d-flex justify-content-between align-items-center px-4 my-4 rounded-3'>
+                <div className='bg-white d-flex justify-content-between align-items-center px-4 mb-4 mt-1 rounded-3'>
                     <p className='fw-bold my-2'>Course Time</p>
                     <p className='my-2'><span>{
                         props.cart.reduce((previous, current) => previous + current.time, 0)
