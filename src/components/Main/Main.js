@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import Calculation from '../Clculation/Calculation';
-import Header from '../Header/Header';
 import Subject from '../Subject/Subject';
 
 const Main = () => {
