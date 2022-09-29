@@ -10,7 +10,7 @@ const Subject = (props) => {
                     <h3>{name}</h3>
                     <p>Category: {category}</p>
                     <p>Credit: {credit}</p>
-                    <p>Time: {time} h</p>
+                    <p>Time: {time}h</p>
                 </div>
                 <div className='mx-auto'>
                     <button className='btn btn-primary mx-auto'>Add Subject</button>
