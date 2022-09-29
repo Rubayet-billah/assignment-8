@@ -1,18 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Personal from '../Personal/Personal';
 
 const Calculation = (props) => {
-    console.log(props.cart);
+    const [breakTime, setBreakTime] = useState([]);
+
+    const displayBreakTime = (time) => {
+        setBreakTime(time);
+        document.getElementById('break-time').innerText = breakTime;
+    }
+    // console.log(props.cart);
     return (
         <div className='bg-light'>
             <Personal></Personal>
             <div>
                 <h3>Add A Break</h3>
                 <div className='bg-white d-flex p-3'>
-                    <div className='bg-light p-2 mx-2 rounded-3'><span>12</span>h</div>
-                    <div className='bg-light p-2 mx-2 rounded-3'><span>24</span>h</div>
-                    <div className='bg-light p-2 mx-2 rounded-3'><span>36</span>h</div>
-                    <div className='bg-light p-2 mx-2 rounded-3'><span>48</span>h</div>
+                    <button onClick={() => displayBreakTime(12)} className='bg-light p-2 mx-2 border border-0 rounded-3'><span id='break-one'>12</span>h</button>
+                    <button onClick={() => displayBreakTime(24)} className='bg-light p-2 mx-2 border border-0 rounded-3'><span>24</span>h</button>
+                    <button onClick={() => displayBreakTime(36)} className='bg-light p-2 mx-2 border border-0 rounded-3'><span>36</span>h</button>
+                    <button onClick={() => displayBreakTime(48)} className='bg-light p-2 mx-2 border border-0 rounded-3'><span>48</span>h</button>
                 </div>
             </div>
             <div>
@@ -25,7 +31,7 @@ const Calculation = (props) => {
                 </div>
                 <div className='bg-white d-flex justify-content-between align-items-center px-4 my-2'>
                     <p className='fw-bold'>Break Time</p>
-                    <p><span></span>h</p>
+                    <p><span id='break-time'></span>h</p>
                 </div>
             </div>
             <div className='d-flex justify-content-center'>
