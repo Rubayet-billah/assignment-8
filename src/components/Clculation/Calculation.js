@@ -1,7 +1,8 @@
 import React from 'react';
 import Personal from '../Personal/Personal';
 
-const Calculation = () => {
+const Calculation = (props) => {
+    console.log(props.cart);
     return (
         <div className='bg-light'>
             <Personal></Personal>
@@ -18,11 +19,13 @@ const Calculation = () => {
                 <h4>Course Details</h4>
                 <div className='bg-white d-flex justify-content-between align-items-center px-4 my-2'>
                     <p className='fw-bold'>Course Time</p>
-                    <p><span>200</span>h</p>
+                    <p><span>{
+                        props.cart.reduce((previous, current) => previous + current.time, 0)
+                    }</span>h</p>
                 </div>
                 <div className='bg-white d-flex justify-content-between align-items-center px-4 my-2'>
                     <p className='fw-bold'>Break Time</p>
-                    <p><span>200</span>h</p>
+                    <p><span></span>h</p>
                 </div>
             </div>
             <div className='d-flex justify-content-center'>
