@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { getValuesFromLocalStorage, setValueToLocalStorage } from '../fakedb/fakedb';
 import Personal from '../Personal/Personal';
 import './Calculation.css'
 
 const Calculation = (props) => {
+    const notify = () => toast("Great job...! You finished the course");
     const [breakTime, setBreakTime] = useState('')
     const handleBreakTime = (e) => {
         setBreakTime(e.target.innerText);
@@ -12,7 +15,7 @@ const Calculation = (props) => {
     const storedBreakTime = getValuesFromLocalStorage();
 
     return (
-        <div className='calculation pb-5 mt-5 ms-4 rounded-3'>
+        <div className='calculation pb-5 mt-5 ms-4 rounded-3 sticky-md-top'>
             <Personal></Personal>
             <div className='px-3'>
                 <h3>Add A Break</h3>
@@ -41,7 +44,10 @@ const Calculation = (props) => {
                 </div>
             </div>
             <div className='d-flex justify-content-center'>
-                <button className='btn btn-primary w-75'>Course Complete</button>
+
+                <button onClick={notify} className='btn btn-primary w-75'>Course Complete</button>
+                <ToastContainer />
+
             </div>
         </div>
     );
