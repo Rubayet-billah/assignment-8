@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import Calculation from '../Clculation/Calculation';
 import Header from '../Header/Header';
 import Subject from '../Subject/Subject';
 
@@ -11,13 +12,16 @@ const Main = () => {
             .then(data => setSubjects(data))
     }, [])
     return (
-        <div className='container'>
-            <Header></Header>
-            <div className='row g-5'>
-                {
-                    subjects.map(subject => <Subject key={subject.id} subject={subject}></Subject>)
-                }
+        <div className='container d-flex flex-column flex-md-row'>
+            <div>
+                <Header></Header>
+                <div className='row g-5'>
+                    {
+                        subjects.map(subject => <Subject key={subject.id} subject={subject}></Subject>)
+                    }
+                </div>
             </div>
+            <Calculation></Calculation>
         </div>
     );
 };
