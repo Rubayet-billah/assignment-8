@@ -27,16 +27,16 @@ const Calculation = (props) => {
             <div className='px-3 my-4'>
                 <h4>Course Details</h4>
                 <div className='bg-white d-flex justify-content-between align-items-center px-4 my-4 rounded-3'>
-                    <p className='fw-bold'>Course Time</p>
-                    <p><span>{
+                    <p className='fw-bold my-2'>Course Time</p>
+                    <p className='my-2'><span>{
                         props.cart.reduce((previous, current) => previous + current.time, 0)
                     }</span>h</p>
                 </div>
                 <div className='bg-white d-flex justify-content-between align-items-center px-4 my-4 rounded-3'>
-                    <p className='fw-bold'>Break Time</p>
+                    <p className='fw-bold my-2'>Break Time</p>
 
                     {
-                        breakTime ? <p><span>{breakTime}</span></p> : <p><span>{storedBreakTime}</span></p>
+                        breakTime ? <p className='my-2'><span>{breakTime}</span></p> : <p className='my-2'><span>{storedBreakTime}</span></p>
                     }
                 </div>
             </div>
