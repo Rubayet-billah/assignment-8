@@ -2,23 +2,32 @@ import React, { useState } from 'react';
 import Personal from '../Personal/Personal';
 
 const Calculation = (props) => {
-    const [breakTime, setBreakTime] = useState([]);
+    // const [breakTime, setBreakTime] = useState([]);
 
-    const displayBreakTime = (time) => {
-        setBreakTime(time);
-        document.getElementById('break-time').innerText = breakTime;
-    }
+    // const displayBreakTime = (time) => {
+    //     // console.log(time);
+    //     setBreakTime(time);
+    //     document.getElementById('break-time').innerText = breakTime;
+    // }
     // console.log(props.cart);
+    const breakTimes = document.getElementsByClassName('break-times');
+    for (const breakTime of breakTimes) {
+        breakTime.addEventListener('click', function (event) {
+            console.log(event.target.innerText);
+            document.getElementById('display-break-time').innerText = event.target.innerText;
+        })
+    }
     return (
         <div className='bg-light'>
             <Personal></Personal>
             <div>
                 <h3>Add A Break</h3>
                 <div className='bg-white d-flex p-3'>
-                    <button onClick={() => displayBreakTime(12)} className='bg-light p-2 mx-2 border border-0 rounded-3'><span id='break-one'>12</span>h</button>
-                    <button onClick={() => displayBreakTime(24)} className='bg-light p-2 mx-2 border border-0 rounded-3'><span>24</span>h</button>
-                    <button onClick={() => displayBreakTime(36)} className='bg-light p-2 mx-2 border border-0 rounded-3'><span>36</span>h</button>
-                    <button onClick={() => displayBreakTime(48)} className='bg-light p-2 mx-2 border border-0 rounded-3'><span>48</span>h</button>
+                    <button className='break-times bg-light p-2 mx-2 border border-0 rounded-3'>12h</button>
+                    <button className='break-times bg-light p-2 mx-2 border border-0 rounded-3'>24h</button>
+                    <button className='break-times bg-light p-2 mx-2 border border-0 rounded-3'>48h</button>
+                    <button className='break-times bg-light p-2 mx-2 border border-0 rounded-3'>72h</button>
+
                 </div>
             </div>
             <div>
@@ -31,7 +40,7 @@ const Calculation = (props) => {
                 </div>
                 <div className='bg-white d-flex justify-content-between align-items-center px-4 my-2'>
                     <p className='fw-bold'>Break Time</p>
-                    <p><span id='break-time'></span>h</p>
+                    <p><span id='display-break-time'>0h</span></p>
                 </div>
             </div>
             <div className='d-flex justify-content-center'>
