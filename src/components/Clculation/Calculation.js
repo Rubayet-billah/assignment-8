@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { getValuesFromLocalStorage, setValueToLocalStorage } from '../fakedb/fakedb';
@@ -7,12 +7,25 @@ import './Calculation.css'
 
 const Calculation = (props) => {
     const notify = () => toast("Great job...! You finished the course");
+
     const [breakTime, setBreakTime] = useState('')
     const handleBreakTime = (e) => {
         setBreakTime(e.target.innerText);
         setValueToLocalStorage(e.target.innerText);
     }
-    const storedBreakTime = getValuesFromLocalStorage();
+
+
+
+    const [storedData, setStoredData] = useState([]);
+    useEffect(() => {
+        const storedBreakTime = getValuesFromLocalStorage();
+        setStoredData(storedBreakTime);
+    }, [storedData])
+
+
+
+
+    // const storedBreakTime = getValuesFromLocalStorage();
 
     return (
         <div className='calculation pb-5 mt-5 ms-md-5 rounded-3 sticky-md-top'>
@@ -40,7 +53,7 @@ const Calculation = (props) => {
                     <p className='fw-bold my-2'>Break Time</p>
 
                     {
-                        breakTime ? <p className='my-2'><span>{breakTime}</span></p> : <p className='my-2'><span>{storedBreakTime}</span></p>
+                        storedData ? <p className='my-2'><span>{storedData}</span></p> : <p className='my-2'><span>{breakTime}</span></p>
                     }
                 </div>
             </div>
