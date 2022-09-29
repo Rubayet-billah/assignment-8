@@ -15,7 +15,7 @@ const Calculation = (props) => {
     const storedBreakTime = getValuesFromLocalStorage();
 
     return (
-        <div className='calculation pb-5 mt-5 ms-4 rounded-3 sticky-md-top'>
+        <div className='calculation pb-5 mt-5 ms-md-5 rounded-3 sticky-md-top'>
             <Personal></Personal>
             <div className='px-3'>
                 <h4>Add A Break</h4>
