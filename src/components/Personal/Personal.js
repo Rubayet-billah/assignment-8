@@ -2,14 +2,13 @@ import React from 'react';
 
 const Personal = () => {
     return (
-        <div>
+        <div className='px-3'>
             <div>
-                <h1>dhvfh</h1>
                 <img src="images/profile1.jpg" alt="" />
                 <h3>Rubayet Billah</h3>
                 <p>Khulna,Bangladesh</p>
             </div>
-            <div className='d-flex'>
+            <div className='d-flex justify-content-between pe-5'>
                 <div>
                     <span className='h3'>68</span><span>kg</span>
                     <p>Weight</p>

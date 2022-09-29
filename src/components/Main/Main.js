@@ -19,16 +19,17 @@ const Main = () => {
         setCart(newCart);
     }
     return (
-        <div className='container d-flex flex-column flex-md-row'>
-            <div>
-                <Header></Header>
+        <div className='container d-flex flex-column-reverse flex-md-row'>
+            <div className='my-5'>
                 <div className='row g-5'>
                     {
                         subjects.map(subject => <Subject key={subject.id} subject={subject} handleAddToCart={handleAddToCart}></Subject>)
                     }
                 </div>
             </div>
-            <Calculation cart={cart}></Calculation>
+            <div>
+                <Calculation cart={cart}></Calculation>
+            </div>
         </div>
     );
 };
