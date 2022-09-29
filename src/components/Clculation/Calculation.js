@@ -20,6 +20,13 @@ const Calculation = () => {
                     <p className='fw-bold'>Course Time</p>
                     <p><span>200</span>h</p>
                 </div>
+                <div className='bg-white d-flex justify-content-between align-items-center px-4 my-2'>
+                    <p className='fw-bold'>Break Time</p>
+                    <p><span>200</span>h</p>
+                </div>
+            </div>
+            <div className='d-flex justify-content-center'>
+                <button className='btn btn-primary w-75'>Course Complete</button>
             </div>
         </div>
     );

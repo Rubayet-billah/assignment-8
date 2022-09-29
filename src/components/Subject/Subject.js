@@ -12,8 +12,8 @@ const Subject = (props) => {
                     <p>Credit: {credit}</p>
                     <p>Time: {time}h</p>
                 </div>
-                <div className='mx-auto'>
-                    <button className='btn btn-primary mx-auto'>Add Subject</button>
+                <div className='d-flex justify-content-center mb-2'>
+                    <button className='btn btn-primary w-75'>Add Subject</button>
                 </div>
             </div>
         </div>
